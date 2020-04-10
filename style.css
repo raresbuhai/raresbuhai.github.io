@@ -1,0 +1,44 @@
+body {
+  padding-top: 20px;
+  font-family: 'Lato';
+}
+
+.body-content {
+  width: 80%;
+}
+
+section {
+  text-align: justify;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 120%;
+  /* width: 790px; */
+}
+
+section li {
+  font-size: 16px;
+}
+
+section img {
+  height: 300px;
+  float: right;
+  margin: 10px;
+}
+
+#title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+hr.clear {
+  color: rgb(0, 0, 0);
+  clear: both;
+}
