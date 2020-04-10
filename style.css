@@ -4,6 +4,7 @@ body {
 }
 
 .body-content {
+  margin: auto;
   width: 80%;
 }
 
