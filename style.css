@@ -1,11 +1,11 @@
 body {
   padding-top: 20px;
-  font-family: 'Lato';
+  font-family: 'Helvetica';
 }
 
 .body-content {
   margin: auto;
-  width: 80%;
+  width: 65%;
 }
 
 section {
