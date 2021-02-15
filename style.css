@@ -6,8 +6,15 @@ body {
 
 .body-content {
   margin: auto;
-  width: 50%;
+  max-width: 1000px;
+  /* width: 50%; */
 }
+
+/* @media only screen and (max-width: 1268px) {
+  .body-content {
+    width: 100%;
+  }
+} */
 
 a:link {
   color: #0074D9;
@@ -44,7 +51,7 @@ section li {
 }
 
 section img {
-  height: 250px;
+  max-width: 250px;
   float: right;
   margin: 10px 0 0 20px;
 }
