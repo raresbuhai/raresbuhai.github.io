@@ -35,7 +35,6 @@ section {
 section p {
   font-size: 18px;
   line-height: 120%;
-  /* width: 790px; */
 }
 
 section li {
@@ -44,7 +43,7 @@ section li {
 }
 
 section img {
-  max-width: 250px;
+  max-height: 300px;
   float: right;
   margin: 10px 0 0 20px;
 }
