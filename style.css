@@ -1,11 +1,31 @@
 body {
   padding-top: 20px;
   font-family: 'Helvetica';
+  color: rgb(50, 50, 50);
 }
 
 .body-content {
   margin: auto;
-  width: 65%;
+  width: 50%;
+}
+
+a:link {
+  color: #0074D9;
+}
+
+/* visited link */
+a:visited {
+  color: #0074D9;
+}
+
+/* mouse over link */
+a:hover {
+  color: #0074D9;
+}
+
+/* selected link */
+a:active {
+  color: #0074D9;
 }
 
 section {
@@ -20,12 +40,13 @@ section p {
 
 section li {
   font-size: 16px;
+  margin: 0 0 3px 0;
 }
 
 section img {
-  height: 300px;
+  height: 250px;
   float: right;
-  margin: 10px;
+  margin: 10px 0 0 20px;
 }
 
 #title {
