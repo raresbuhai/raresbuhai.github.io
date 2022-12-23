@@ -59,7 +59,13 @@ h2 {
   font-weight: bold;
 }
 
-hr.clear {
-  color: rgb(0, 0, 0);
-  clear: both;
+hr {
+  background-color: rgb(50, 50, 50);
+  color: rgb(50, 50, 50);
+  height: 1px;
+  border-width: 0px;
+}
+
+ul {
+  line-height: normal;
 }
