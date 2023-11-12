@@ -1,31 +1,36 @@
 body {
   padding-top: 20px;
-  font-family: 'Helvetica';
+  font-family: 'Cabin';
+  background-color: rgb(255, 255, 255);
   color: rgb(50, 50, 50);
 }
 
 .body-content {
   margin: auto;
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 a:link {
   color: #0074D9;
+  text-decoration: none;
 }
 
 /* visited link */
 a:visited {
   color: #0074D9;
+  text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
   color: #0074D9;
+  text-decoration: none;
 }
 
 /* selected link */
 a:active {
   color: #0074D9;
+  text-decoration: none;
 }
 
 section {
@@ -46,7 +51,8 @@ section img {
   max-height: 250px;
   max-width: 30%;
   float: right;
-  margin: 10px 0 0 20px;
+  margin: 10px 0 0 50px;
+  border-radius: 3%;
 }
 
 #title {
