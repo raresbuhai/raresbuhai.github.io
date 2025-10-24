@@ -371,5 +371,6 @@ h2 {
 
   .pub-meta {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
