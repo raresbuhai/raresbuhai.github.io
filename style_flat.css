@@ -368,5 +368,6 @@ h2 {
 
   .pub-meta .pub-venue {
     align-self: flex-end;
+    margin-left: auto;
   }
 }
