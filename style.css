@@ -30,17 +30,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.04) 0, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.06;
-  z-index: -1;
-}
-
 .site-content {
   max-width: 780px;
   margin: 0 auto;
@@ -80,15 +69,6 @@ a {
   color: var(--accent);
   text-decoration: none;
   transition: color 200ms ease, box-shadow 200ms ease;
-}
-
-a:link {
-  color: var(--accent);
-}
-
-/* visited link */
-a:visited {
-  color: var(--accent);
 }
 
 /* mouse over link */
@@ -390,6 +370,6 @@ h2 {
   }
 
   .pub-meta {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
