@@ -37,7 +37,6 @@ body {
   background-color: var(--surface);
   border-radius: 0;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -57,12 +56,13 @@ section {
   color: var(--text);
 }
 
-section + section {
-  margin-top: 32px;
-}
-
 b {
   font-weight: 600;
+}
+
+.hero + .content-section,
+.content-section + .content-section {
+  margin-top: 32px;
 }
 
 a {
