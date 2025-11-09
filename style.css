@@ -64,7 +64,10 @@ b {
   font-weight: 600;
 }
 
-.hero + .content-section,
+.hero + .content-section {
+  margin-top: 24px;
+}
+
 .content-section + .content-section {
   margin-top: 32px;
 }
@@ -183,6 +186,70 @@ h2 {
 .contact-link {
   font-weight: 500;
   word-break: break-word;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--accent-strong);
+  border: 1px solid var(--accent-strong);
+  text-decoration: none;
+  box-shadow: none;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--accent-strong);
+  border-color: rgba(37, 99, 235, 0.45);
+}
+
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.button-label {
+  line-height: 1;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #1b4fd1;
+  border-color: #1b4fd1;
+  color: #fff;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.button:active {
+  background: #1540a8;
+  border-color: #1540a8;
 }
 
 .focus-card {
@@ -357,6 +424,10 @@ h2 {
   }
 
   .contact-line {
+    justify-content: center;
+  }
+
+  .hero-actions {
     justify-content: center;
   }
 
