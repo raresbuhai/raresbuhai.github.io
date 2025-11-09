@@ -65,7 +65,7 @@ b {
 }
 
 .hero + .content-section {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .content-section + .content-section {
@@ -195,7 +195,7 @@ h2 {
   margin-top: 6px;
 }
 
-.button {
+.hero-chip {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -204,52 +204,52 @@ h2 {
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #fff;
-  background: var(--accent-strong);
-  border: 1px solid var(--accent-strong);
+  color: var(--accent-strong);
+  border: 1px solid rgba(37, 99, 235, 0.45);
+  background: transparent;
   text-decoration: none;
-  box-shadow: none;
   transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
-.button-outline {
-  background: transparent;
-  color: var(--accent-strong);
-  border-color: rgba(37, 99, 235, 0.45);
+.hero-chip--solid {
+  color: #fff;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
 }
 
-.button-icon {
+.hero-chip__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.button-icon svg {
+.hero-chip__icon svg {
   width: 12px;
   height: 12px;
 }
 
-.button-label {
+.hero-chip__label {
   line-height: 1;
 }
 
-.button:hover,
-.button:focus-visible {
+.hero-chip:hover,
+.hero-chip:focus-visible {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: var(--accent-strong);
+  color: var(--accent-strong);
+}
+
+.hero-chip--solid:hover,
+.hero-chip--solid:focus-visible {
   background: #1b4fd1;
   border-color: #1b4fd1;
   color: #fff;
 }
 
-.button-outline:hover,
-.button-outline:focus-visible {
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--accent-strong);
-  border-color: var(--accent-strong);
-}
-
-.button:active {
+.hero-chip--solid:active {
   background: #1540a8;
   border-color: #1540a8;
+  color: #fff;
 }
 
 .focus-card {
