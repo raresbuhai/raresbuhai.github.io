@@ -406,8 +406,8 @@ h2 {
 
   .hero {
     grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
+    text-align: left;
+    justify-items: start;
   }
 
   .hero-media {
@@ -416,19 +416,28 @@ h2 {
 
   .hero-content {
     grid-column: 1;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero p {
     margin-bottom: 0;
+    text-align: left;
+  }
+
+  #title {
+    align-self: center;
+    width: 100%;
+    text-align: center;
   }
 
   .contact-line {
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .hero-actions {
     justify-content: center;
+    width: 100%;
   }
 
   .hero-focus {
