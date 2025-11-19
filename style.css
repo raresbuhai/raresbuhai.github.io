@@ -64,11 +64,11 @@ b {
   font-weight: 600;
 }
 
-.hero + .content-section {
+.hero+.content-section {
   margin-top: 20px;
 }
 
-.content-section + .content-section {
+.content-section+.content-section {
   margin-top: 32px;
 }
 
@@ -329,7 +329,7 @@ h2 {
   gap: 10px;
 }
 
-.publication-year + .publication-year {
+.publication-year+.publication-year {
   margin-top: 24px;
 }
 
@@ -418,6 +418,12 @@ h2 {
 
   .hero-media {
     grid-column: 1;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .hero-media img {
+    margin: 0 auto;
   }
 
   .hero-content {
