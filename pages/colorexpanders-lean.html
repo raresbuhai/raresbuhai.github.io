@@ -9,6 +9,7 @@
 
     <link rel="icon" type="image/x-icon" href="../images/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Questrial&display=swap">
+    <link rel="stylesheet" href="../assets/prism/prism-tomorrow.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
@@ -20,7 +21,7 @@
 
         <p>The Lean code was generated using ChatGPT Pro 5.1 and GPT-5.1-Codex-Max. It took ~3 days to arrive at the final result.</p>
 
-        <p><a href="https://github.com/raresbuhai/coloringexpanders-lean">See the repository with the Lean proof here</a>.
+        <p><a href="https://github.com/raresbuhai/coloringexpanders-lean">See the repository with the Lean proof here</a>.</p>
       </section>
 
       <section class="content-section">
@@ -29,33 +30,74 @@
         <p>The main file is <code>Colorexpanders.lean</code>. Theorem 4.1 corresponds to theorem <code>large_bottom_rank_implies_large_top_rank</code> and Corollary 4.2 corresponds to theorem <code>small_top_rank_implies_small_bottom_rank</code>.</p>
 
         <p>The statement of Theorem 4.1 is formalized as follows:</p>
-        <pre><code>
-theorem large_bottom_rank_implies_large_top_rank
-    [Nonempty n] (A : Matrix n n ℝ)
-    (hHerm : A.IsHermitian)
-    (hNonneg : ∀ i j, 0 ≤ A i j)
-    (hOp : ‖A‖ ≤ (1 : ℝ))
-    {μ : ℝ} (hμ : 0 ≤ μ)
-    {t : ℕ} (hBottom : bottomThresholdRank A hHerm μ ≥ t)
-    {σ : ℝ} (hσ₀ : 0 < σ) (hσ₁ : σ < 1) :
-    (topThresholdRank A hHerm ((μ^(2:ℕ) - σ) / (1 - σ)) : ℝ)
-      ≥ σ^2 * (t : ℝ)
-        </code></pre>
+        <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">theorem large_bottom_rank_implies_large_top_rank
+  [Nonempty n] (A : Matrix n n ℝ)
+  (hHerm : A.IsHermitian)
+  (hNonneg : ∀ i j, 0 ≤ A i j)
+  (hOp : ‖A‖ ≤ (1 : ℝ))
+  {μ : ℝ} (hμ : 0 ≤ μ)
+  {t : ℕ} (hBottom : bottomThresholdRank A hHerm μ ≥ t)
+  {σ : ℝ} (hσ₀ : 0 < σ) (hσ₁ : σ < 1) :
+  (topThresholdRank A hHerm ((μ^(2 : ℕ) - σ) / (1 - σ)) : ℝ)
+    ≥ σ^2 * (t : ℝ)</code></pre>
         <p>In words, this says that given a real-valued Hermitian matrix <code>A</code> with non-negative entries and operator norm bounded by <code>1</code>, if the number of eigenvalues of <code>A</code> smaller than or equal to <code>μ</code> is at least <code>t</code>, then for any <code>0 < σ < 1</code> we have that the number of eigenvalues of <code>A</code> larger than <code>(μ^2 - σ) / (1 - σ)</code> is at least <code>σ^2 * t</code>.</p>
 
         <p>The statement uses the custom definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
-        <pre><code>
-noncomputable def topThresholdRank
-    (A : Matrix n n ℝ) (hA : A.IsHermitian) (τ : ℝ) : ℕ :=
+        <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">noncomputable def topThresholdRank
+  (A : Matrix n n ℝ) (hA : A.IsHermitian) (τ : ℝ) : ℕ :=
   Fintype.card { i : n // τ ≤ hA.eigenvalues i }
 
 noncomputable def bottomThresholdRank
-    (A : Matrix n n ℝ) (hA : A.IsHermitian) (μ : ℝ) : ℕ :=
-  Fintype.card { i : n // hA.eigenvalues i ≤ -μ }
-        </code></pre>
+  (A : Matrix n n ℝ) (hA : A.IsHermitian) (μ : ℝ) : ℕ :=
+  Fintype.card { i : n // hA.eigenvalues i ≤ -μ }</code></pre>
 
         <p>That is, the expression <code>topThresholdRank A hHerm τ</code> is defined as the cardinality of the set of eigenvalues of <code>A</code> with value at least <code>τ</code>, and similarly for <code>bottomThresholdRank</code>.</p>
       </section>
     </main>
+    <script src="../assets/prism/prism.min.js"></script>
+    <script src="../assets/prism/prism-lean.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.Prism) {
+          Prism.highlightAll();
+        }
+
+        document.querySelectorAll('.code-block .copy-button').forEach((button) => {
+          button.addEventListener('click', () => {
+            const code = button.nextElementSibling;
+            if (!code) return;
+
+            const text = code.innerText;
+            const original = button.textContent;
+            const showCopied = () => {
+              button.textContent = 'Copied!';
+              setTimeout(() => {
+                button.textContent = original;
+              }, 1400);
+            };
+
+            const fallbackCopy = () => {
+              const textarea = document.createElement('textarea');
+              textarea.value = text;
+              textarea.setAttribute('readonly', '');
+              textarea.style.position = 'absolute';
+              textarea.style.left = '-9999px';
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textarea);
+              showCopied();
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+              return;
+            }
+
+            fallbackCopy();
+          });
+        });
+      });
+    </script>
   </body>
 </html>
