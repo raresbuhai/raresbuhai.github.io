@@ -51,6 +51,10 @@ section {
   color: var(--text);
 }
 
+.page-back {
+  margin: 0 0 12px 0;
+}
+
 b {
   font-weight: 600;
 }
