@@ -21,11 +21,9 @@
       <section class="content-section">
         <p class="page-back"><a href="../index.html">← Back to home</a></p>
         <h1>Lean formalization: Finding Colorings in One-Sided Expanders</h1>
-        <p>I formalized in <a href="https://lean-lang.org/">Lean</a> the proofs of the results in Section 4 of our paper <a href="https://arxiv.org/abs/2508.02825">Finding Colorings in One-Sided Expanders</a>.</p>
+        <p>I formalized in <a href="https://lean-lang.org/">Lean</a> the results in Section 4 of our paper <a href="https://arxiv.org/abs/2508.02825">Finding Colorings in One-Sided Expanders</a>. The Lean code was generated using ChatGPT Pro 5.1 and GPT-5.1-Codex-Max.</p>
 
-        <p>The Lean code was generated using ChatGPT Pro 5.1 and GPT-5.1-Codex-Max.</p>
-
-        <p><a href="https://github.com/raresbuhai/coloringexpanders-lean">See the repository with the Lean proof here</a>.</p>
+        <p><a href="https://github.com/raresbuhai/coloringexpanders-lean">Here is the link to the repo</a>.</p>
       </section>
 
       <section class="content-section">
@@ -46,7 +44,7 @@
     ≥ σ^2 * (t : ℝ)</code></pre>
         <p>In words, this says that given a real-valued Hermitian matrix <code>A</code> with non-negative entries and operator norm bounded by <code>1</code>, if the number of eigenvalues of <code>A</code> smaller than or equal to <code>μ</code> is at least <code>t</code>, then for any <code>0 < σ < 1</code> we have that the number of eigenvalues of <code>A</code> larger than <code>(μ^2 - σ) / (1 - σ)</code> is at least <code>σ^2 * t</code>.</p>
 
-        <p>The statement uses the custom definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
+        <p>The statement uses the definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
         <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">noncomputable def topThresholdRank
   (A : Matrix n n ℝ) (hA : A.IsHermitian) (τ : ℝ) : ℕ :=
   Fintype.card { i : n // τ ≤ hA.eigenvalues i }
