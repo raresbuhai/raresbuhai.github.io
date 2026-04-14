@@ -310,7 +310,7 @@ h2 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-top: 6px;
 }
 
@@ -407,6 +407,7 @@ h2 {
   justify-content: center;
   flex: none;
   line-height: 0;
+  margin-left: 1px;
 }
 
 .pub-link__icon img {
