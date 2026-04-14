@@ -42,7 +42,7 @@
   {σ : ℝ} (hσ₀ : 0 < σ) (hσ₁ : σ < 1) :
   (topThresholdRank A hHerm ((μ^(2 : ℕ) - σ) / (1 - σ)) : ℝ)
     ≥ σ^2 * (t : ℝ)</code></pre>
-        <p>In words, this says that given a real-valued Hermitian matrix <code>A</code> with non-negative entries and operator norm bounded by <code>1</code>, if the number of eigenvalues of <code>A</code> smaller than or equal to <code>μ</code> is at least <code>t</code>, then for any <code>0 < σ < 1</code> we have that the number of eigenvalues of <code>A</code> larger than <code>(μ^2 - σ) / (1 - σ)</code> is at least <code>σ^2 * t</code>.</p>
+        <p>In words, this says that if <code>A</code> is a real Hermitian matrix with non-negative entries and operator norm at most <code>1</code>, and if <code>A</code> has at least <code>t</code> eigenvalues less than or equal to <code>-μ</code>, then for every <code>0 &lt; σ &lt; 1</code>, it has at least <code>σ^2 * t</code> eigenvalues greater than or equal to <code>(μ^2 - σ) / (1 - σ)</code>.</p>
 
         <p>The statement uses the definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
         <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">noncomputable def topThresholdRank
@@ -53,7 +53,7 @@ noncomputable def bottomThresholdRank
   (A : Matrix n n ℝ) (hA : A.IsHermitian) (μ : ℝ) : ℕ :=
   Fintype.card { i : n // hA.eigenvalues i ≤ -μ }</code></pre>
 
-        <p>That is, the expression <code>topThresholdRank A hHerm τ</code> is defined as the cardinality of the set of eigenvalues of <code>A</code> with value at least <code>τ</code>, and similarly for <code>bottomThresholdRank</code>.</p>
+        <p>That is, <code>topThresholdRank A hHerm τ</code> counts the eigenvalues of <code>A</code> that are at least <code>τ</code>, while <code>bottomThresholdRank A hHerm μ</code> counts the eigenvalues that are at most <code>-μ</code>. In both cases, eigenvalues are counted with multiplicity.</p>
       </section>
     </main>
     <script src="../assets/prism/prism.min.js"></script>
