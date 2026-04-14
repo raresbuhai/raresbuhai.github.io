@@ -381,13 +381,14 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  flex-wrap: nowrap;
+  gap: 6px;
   padding: 4px 12px;
   position: relative;
   top: 0;
   transform: translateY(3px);
   border-radius: 8px;
-  font-size: 0;
+  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1;
   height: 27px;
@@ -397,12 +398,15 @@ h2 {
   text-decoration: none;
   transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .pub-link__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: none;
+  line-height: 0;
 }
 
 .pub-link__icon img {
@@ -412,7 +416,17 @@ h2 {
 }
 
 .pub-link__label {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: inherit;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: translateY(-5px);
 }
 
 .pub-link:hover,
@@ -583,11 +597,11 @@ details.code-collapse code {
   flex-wrap: wrap;
 }
 
-.pub-meta span {
+.pub-meta > span {
   display: block;
 }
 
-.pub-meta span:not(.pub-venue) {
+.pub-meta > span:not(.pub-venue) {
   flex: 1;
   min-width: 0;
 }
