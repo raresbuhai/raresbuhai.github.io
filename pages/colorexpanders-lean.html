@@ -69,11 +69,13 @@ noncomputable def bottomThresholdRank
             const code = button.nextElementSibling;
             if (!code) return;
 
-            const text = code.innerText;
+            const text = code.textContent || '';
             const original = button.textContent;
-            const showCopied = () => {
-              button.textContent = 'Copied!';
-              setTimeout(() => {
+            let resetTimer;
+            const showStatus = (label) => {
+              button.textContent = label;
+              window.clearTimeout(resetTimer);
+              resetTimer = window.setTimeout(() => {
                 button.textContent = original;
               }, 1400);
             };
@@ -86,13 +88,23 @@ noncomputable def bottomThresholdRank
               textarea.style.left = '-9999px';
               document.body.appendChild(textarea);
               textarea.select();
-              document.execCommand('copy');
+              let copied = false;
+              try {
+                copied = document.execCommand('copy');
+              } catch (error) {
+                copied = false;
+              }
               document.body.removeChild(textarea);
-              showCopied();
+              showStatus(copied ? 'Copied!' : 'Copy failed');
+              return copied;
             };
 
             if (navigator.clipboard && navigator.clipboard.writeText) {
-              navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+              navigator.clipboard.writeText(text).then(() => {
+                showStatus('Copied!');
+              }).catch(() => {
+                fallbackCopy();
+              });
               return;
             }
 
