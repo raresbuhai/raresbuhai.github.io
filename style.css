@@ -5,10 +5,10 @@
   --muted: #475569;
   --accent: #2563eb;
   --accent-strong: #1d4ed8;
-  --badge-bg: #e5ecff;
-  --badge-border: rgba(37, 99, 235, 0.35);
+  --badge-bg: #eef3ff;
+  --badge-border: rgba(37, 99, 235, 0.24);
   --badge-muted-bg: #eef1f6;
-  --badge-muted-border: rgba(71, 85, 105, 0.3);
+  --badge-muted-border: rgba(71, 85, 105, 0.22);
   --border: rgba(15, 23, 42, 0.08);
   --shadow-lg: none;
   --shadow-sm: none;
@@ -394,8 +394,8 @@ h2 {
   line-height: 1;
   height: 27px;
   color: #b45309;
-  background: #fff7e6;
-  border: 1px solid #f59e0b;
+  background: #fff9ed;
+  border: 1px solid rgba(245, 158, 11, 0.72);
   text-decoration: none;
   transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
   vertical-align: middle;
@@ -528,23 +528,26 @@ details.code-collapse code {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 8px;
+  gap: 7px;
 }
 
 .timeline-list li {
-  position: relative;
-  padding-left: 18px;
+  display: grid;
+  grid-template-columns: 7.2rem minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: baseline;
 }
 
-.timeline-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--accent);
+.timeline-date {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timeline-detail {
+  min-width: 0;
 }
 
 .publication-year {
