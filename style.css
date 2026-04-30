@@ -38,6 +38,7 @@ body {
 
 .site-content {
   max-width: var(--content-max);
+  width: min(100%, var(--content-max));
   margin: 0 auto;
   padding: 40px 48px;
   min-height: 100vh;
@@ -46,7 +47,7 @@ body {
   border-right: 1px solid var(--border);
   border-radius: 0;
   position: relative;
-  overflow: hidden;
+  overflow-x: visible;
 }
 
 section {
@@ -252,6 +253,7 @@ pre code {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
 }
 
 .hero p {
@@ -581,14 +583,17 @@ details.code-collapse code {
   border-radius: 10px;
   border: 1px solid rgba(15, 23, 42, 0.12);
   background-color: #ffffff;
+  min-width: 0;
 }
 
 .publication-item a {
   display: inline-block;
+  max-width: 100%;
   font-weight: 600;
   font-size: 1.01rem;
   line-height: 1.25;
   margin-bottom: 7px;
+  overflow-wrap: anywhere;
 }
 
 .pub-meta {
@@ -608,6 +613,7 @@ details.code-collapse code {
 .pub-meta > span:not(.pub-venue) {
   flex: 1;
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .pub-venue {
@@ -622,6 +628,22 @@ details.code-collapse code {
 }
 
 @media (max-width: 640px) {
+  h1,
+  h2,
+  #title,
+  p,
+  .timeline-detail,
+  .contact-link {
+    overflow-wrap: anywhere;
+  }
+
+  :not(pre) > code {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   pre,
   pre[class*="language-"],
   code[class*="language-"] {
@@ -715,5 +737,72 @@ details.code-collapse code {
   .pub-meta .pub-link {
     align-self: flex-end;
     margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-content {
+    padding: 28px 18px;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .hero {
+    row-gap: 24px;
+  }
+
+  .hero-media img {
+    width: min(200px, 78vw);
+  }
+
+  #title {
+    font-size: clamp(1.95rem, 8vw, 2.12rem);
+    letter-spacing: 0;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 7vw, 1.9rem);
+    letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    letter-spacing: 0;
+  }
+
+  .contact-line {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+
+  .content-section .timeline-list,
+  .content-section .publication-list {
+    padding-left: 0;
+  }
+
+  .timeline-list {
+    gap: 12px;
+  }
+
+  .timeline-list li {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+  }
+
+  .publication-item {
+    padding: 12px;
+  }
+
+  .pub-meta .pub-venue,
+  .pub-meta .pub-link {
+    align-self: flex-start;
+    margin-left: 0;
+  }
+
+  pre,
+  pre[class*="language-"] {
+    padding-right: 14px;
+    padding-left: 14px;
+    font-size: 0.86rem;
   }
 }
