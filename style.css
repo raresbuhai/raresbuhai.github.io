@@ -645,10 +645,17 @@ details.code-collapse code {
   }
 
   pre,
-  pre[class*="language-"],
-  code[class*="language-"] {
-    white-space: pre-wrap !important;
-    word-break: break-word;
+  pre[class*="language-"] {
+    overflow-x: auto;
+    white-space: pre !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  pre code,
+  pre code[class*="language-"] {
+    white-space: pre !important;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 }
 
