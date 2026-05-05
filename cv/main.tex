@@ -1,0 +1,106 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage[unicode]{hyperref}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black,
+  pdfauthor={Rares-Darius Buhai},
+  pdftitle={Curriculum Vitae -- Rares-Darius Buhai}
+}
+
+% ---- Section heading style: bold title with a thin rule *below* (no strike-through) ----
+\titleformat{name=\section,numberless}[block]
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.4em}\titlerule]
+\titlespacing*{\section}{0pt}{1.1em}{0.7em}
+
+% Itemize spacing
+\setlist[itemize]{leftmargin=*, itemsep=0.25em, topsep=0.2em}
+
+\begin{document}
+\begin{flushright}
+  \small\emph{Updated: May 2026}
+\end{flushright}
+\begin{center}
+  {\LARGE \textbf{Rares-Darius Buhai}}\\[0.23em]
+  \href{mailto:rares-darius.buhai@epfl.ch}{rares-darius.buhai@epfl.ch} \textbar\ 
+  \href{https://raresbuhai.com}{raresbuhai.com}
+\end{center}
+
+\section*{Current Position}
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}@{}X@{}}
+  \textbf{2025--present} & Postdoc, School of Computer and Communication Sciences, EPFL.\\
+                         & Host: Prof.\ Ola Svensson (\href{mailto:ola.svensson@epfl.ch}{ola.svensson@epfl.ch}).\\[0.6em]
+\end{tabularx}
+
+\section*{Education}
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}@{}X@{}}
+  \textbf{2020--2025} & \textbf{Dr.Sc.}, Department of Computer Science, ETH Zurich.\\
+                      & Advisor: Prof.\ David Steurer (\href{mailto:dsteurer@ethz.ch}{dsteurer@ethz.ch}).\\
+                      & Thesis: \emph{Efficient Estimation and Certification in High-Dimensional Semirandom and Non-Spherical Models}.\\[0.6em]
+  \textbf{2019--2020} & \textbf{M.Eng.}, Department of Electrical Engineering and Computer Science, MIT.\\
+                      & Advisor: Prof.\ Guy Bresler (\href{mailto:guy@mit.edu}{guy@mit.edu}).\\[0.6em]
+  \textbf{2015--2019} & \textbf{B.Sc.}, Department of Electrical Engineering and Computer Science, MIT.
+\end{tabularx}
+
+\section*{Industry Experience}
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}@{}X@{}}
+  \textbf{2017} & Software Engineering Intern, Google.\\[0.4em]
+  \textbf{2016} & Software Engineering Intern, Facebook.
+\end{tabularx}
+
+\section*{Awards}
+Gold medal at the International Olympiad in Informatics (IOI), years 2012, 2013, 2014, and 2015.
+
+\section*{Teaching}
+Teaching assistant for:
+\begin{itemize}
+  \item \Needspace{4\baselineskip}ETH Zurich: Algorithms and Data Structures (Fall 2021, 2022, 2023, 2024), Algorithmic Foundations of Data Science (Spring 2022), Optimization for Data Science (Spring 2021).
+  \item \Needspace{4\baselineskip}MIT: Introduction to Probability 6.041 (Spring 2020), Machine Learning 6.867 (Fall 2019).
+\end{itemize}
+
+\section*{Academic Service}
+Reviewed for STOC, FOCS, SODA, COLT, ITCS, NeurIPS, APPROX, ESA, and TCC.
+
+\section*{Publications}
+\begin{itemize}
+  \item \Needspace{4\baselineskip}\textbf{Dimension Reduction via Sum-of-Squares and Improved Clustering Algorithms for Non-Spherical Mixtures}.\\
+  Prashanti Anderson, Mitali Bafna, Rares-Darius Buhai, Pravesh K.\ Kothari, David Steurer. \textsc{COLT} 2026.
+  \item \Needspace{4\baselineskip}\textbf{Finding Colorings in One-Sided Expanders}.\\
+  Rares-Darius Buhai, Yiding Hua, David Steurer, Andor V\'{a}ri-Kakas. \textsc{FOCS} 2025.
+  \item \Needspace{4\baselineskip}\textbf{The Quasi-Polynomial Low-Degree Conjecture Is False}.\\
+  Rares-Darius Buhai, Jun-Ting Hsieh, Aayush Jain, Pravesh K.\ Kothari. \textsc{FOCS} 2025.
+  % \item \textbf{Lasso and Partially-Rotated Designs}.\\
+  % Rares-Darius Buhai. Manuscript 2025.
+  \item \Needspace{4\baselineskip}\textbf{Robust Mixture Learning when Outliers Overwhelm Small Groups}.\\
+  Daniil Dmitriev, Rares-Darius Buhai, Stefan Tiegel, Alexander Wolters, Gleb Novikov, Amartya Sanyal, David Steurer, Fanny Yang. \textsc{NeurIPS} 2024.
+  \item \Needspace{4\baselineskip}\textbf{Semirandom Planted Clique and the Restricted Isometry Property}.\\
+  Jaros\l aw B\l asiok, Rares-Darius Buhai, Pravesh K.\ Kothari, David Steurer. \textsc{FOCS} 2024.
+  \item \Needspace{4\baselineskip}\textbf{Computational-Statistical Gaps for Improper Learning in Sparse Linear Regression}.\\
+  Rares-Darius Buhai, Jingqiu Ding, Stefan Tiegel. \textsc{COLT} 2024.
+  \item \Needspace{4\baselineskip}\textbf{Beyond Parallel Pancakes: Quasi-Polynomial Time Guarantees for Non-Spherical Gaussian Mixtures}.\\
+  Rares-Darius Buhai, David Steurer. \textsc{COLT} 2023.
+  \item \Needspace{4\baselineskip}\textbf{Algorithms Approaching the Threshold for Semi-Random Planted Clique}.\\
+  Rares-Darius Buhai, Pravesh K.\ Kothari, David Steurer. \textsc{STOC} 2023.
+  \item \Needspace{4\baselineskip}\textbf{Learning Restricted Boltzmann Machines with Sparse Latent Variables}.\\
+  Guy Bresler, Rares-Darius Buhai. \textsc{NeurIPS} 2020.
+  \item \Needspace{4\baselineskip}\textbf{Empirical Study of the Benefits of Overparameterization in Learning Latent Variable Models}.\\
+  Rares-Darius Buhai, Yoni Halpern, Yoon Kim, Andrej Risteski, David Steurer. \textsc{ICML} 2020.
+  \item \Needspace{4\baselineskip}\textbf{Human-aware robotic assistant for collaborative assembly: Integrating human motion prediction with planning in time}.\\
+  Vaibhav V Unhelkar, Przemyslaw A Lasota, Quirin Tyroller, Rares-Darius Buhai, Laurie Marceau, Barbara Deml, Julie A Shah. \textsc{IEEE Robotics and Automation Letters} 2018.
+\end{itemize}
+\end{document}
