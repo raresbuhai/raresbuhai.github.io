@@ -32,7 +32,9 @@
         <p>The main file is <code>Colorexpanders.lean</code>. Theorem 4.1 corresponds to theorem <code>large_bottom_rank_implies_large_top_rank</code> and Corollary 4.2 corresponds to theorem <code>small_top_rank_implies_small_bottom_rank</code>.</p>
 
         <p>The statement of Theorem 4.1 is formalized as follows:</p>
-        <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">theorem large_bottom_rank_implies_large_top_rank
+        <div class="code-block">
+          <button class="copy-button" type="button">Copy</button>
+          <pre class="language-lean"><code class="language-lean">theorem large_bottom_rank_implies_large_top_rank
   [Nonempty n] (A : Matrix n n ℝ)
   (hHerm : A.IsHermitian)
   (hNonneg : ∀ i j, 0 ≤ A i j)
@@ -42,76 +44,26 @@
   {σ : ℝ} (hσ₀ : 0 < σ) (hσ₁ : σ < 1) :
   (topThresholdRank A hHerm ((μ^(2 : ℕ) - σ) / (1 - σ)) : ℝ)
     ≥ σ^2 * (t : ℝ)</code></pre>
+        </div>
         <p>In words, this says that if <code>A</code> is a real Hermitian matrix with non&#8209;negative entries and operator norm at most <code>1</code>, and if <code>A</code> has at least <code>t</code> eigenvalues less than or equal to <code>-μ</code>, then for every <code>0 &lt; σ &lt; 1</code>, it has at least <code>σ^2 * t</code> eigenvalues greater than or equal to <code>(μ^2 - σ) / (1 - σ)</code>.</p>
 
         <p>The statement uses the definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
-        <pre class="code-block language-lean"><button class="copy-button" type="button">Copy</button><code class="language-lean">noncomputable def topThresholdRank
+        <div class="code-block">
+          <button class="copy-button" type="button">Copy</button>
+          <pre class="language-lean"><code class="language-lean">noncomputable def topThresholdRank
   (A : Matrix n n ℝ) (hA : A.IsHermitian) (τ : ℝ) : ℕ :=
   Fintype.card { i : n // τ ≤ hA.eigenvalues i }
 
 noncomputable def bottomThresholdRank
   (A : Matrix n n ℝ) (hA : A.IsHermitian) (μ : ℝ) : ℕ :=
   Fintype.card { i : n // hA.eigenvalues i ≤ -μ }</code></pre>
+        </div>
 
         <p>That is, <code>topThresholdRank A hHerm τ</code> counts the eigenvalues of <code>A</code> that are at least <code>τ</code>, while <code>bottomThresholdRank A hHerm μ</code> counts the eigenvalues that are at most <code>-μ</code>. In both cases, eigenvalues are counted with multiplicity.</p>
       </section>
     </main>
     <script src="../assets/prism/prism.min.js"></script>
     <script src="../assets/prism/prism-lean.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (window.Prism) {
-          Prism.highlightAll();
-        }
-
-        document.querySelectorAll('.code-block .copy-button').forEach((button) => {
-          button.addEventListener('click', () => {
-            const code = button.nextElementSibling;
-            if (!code) return;
-
-            const text = code.textContent || '';
-            const original = button.textContent;
-            let resetTimer;
-            const showStatus = (label) => {
-              button.textContent = label;
-              window.clearTimeout(resetTimer);
-              resetTimer = window.setTimeout(() => {
-                button.textContent = original;
-              }, 1400);
-            };
-
-            const fallbackCopy = () => {
-              const textarea = document.createElement('textarea');
-              textarea.value = text;
-              textarea.setAttribute('readonly', '');
-              textarea.style.position = 'absolute';
-              textarea.style.left = '-9999px';
-              document.body.appendChild(textarea);
-              textarea.select();
-              let copied = false;
-              try {
-                copied = document.execCommand('copy');
-              } catch (error) {
-                copied = false;
-              }
-              document.body.removeChild(textarea);
-              showStatus(copied ? 'Copied!' : 'Copy failed');
-              return copied;
-            };
-
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              navigator.clipboard.writeText(text).then(() => {
-                showStatus('Copied!');
-              }).catch(() => {
-                fallbackCopy();
-              });
-              return;
-            }
-
-            fallbackCopy();
-          });
-        });
-      });
-    </script>
+    <script src="../assets/copy-code.js"></script>
   </body>
 </html>
