@@ -6,17 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.code-block').forEach((block) => {
     const button = block.querySelector('.copy-button');
     const code = block.querySelector('code');
+    const status = block.querySelector('.copy-status');
 
-    if (!button || !code) return;
+    if (!button || !code || !status) return;
 
     const original = button.textContent || 'Copy';
+    let announceTimer;
     let resetTimer;
 
     const showStatus = (label) => {
       button.textContent = label;
+      status.textContent = '';
+      window.clearTimeout(announceTimer);
+      announceTimer = window.setTimeout(() => {
+        status.textContent = label;
+      }, 0);
       window.clearTimeout(resetTimer);
       resetTimer = window.setTimeout(() => {
         button.textContent = original;
+        status.textContent = '';
       }, 1400);
     };
 

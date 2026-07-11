@@ -34,6 +34,7 @@
         <p>The statement of Theorem 4.1 is formalized as follows:</p>
         <div class="code-block">
           <button class="copy-button" type="button">Copy</button>
+          <span class="copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
           <pre class="language-lean"><code class="language-lean">theorem large_bottom_rank_implies_large_top_rank
   [Nonempty n] (A : Matrix n n ℝ)
   (hHerm : A.IsHermitian)
@@ -50,6 +51,7 @@
         <p>The statement uses the definitions <code>topThresholdRank</code> and <code>bottomThresholdRank</code>, which are:</p>
         <div class="code-block">
           <button class="copy-button" type="button">Copy</button>
+          <span class="copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
           <pre class="language-lean"><code class="language-lean">noncomputable def topThresholdRank
   (A : Matrix n n ℝ) (hA : A.IsHermitian) (τ : ℝ) : ℕ :=
   Fintype.card { i : n // τ ≤ hA.eigenvalues i }
