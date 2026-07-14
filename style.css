@@ -407,7 +407,6 @@ h2 {
   padding: 4px 12px;
   position: relative;
   top: 0;
-  transform: translateY(3px);
   border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -448,7 +447,6 @@ h2 {
   color: inherit;
   white-space: nowrap;
   text-transform: uppercase;
-  transform: translateY(-5px);
 }
 
 .pub-link:hover,
@@ -531,7 +529,7 @@ h2 {
   min-width: 0;
 }
 
-.publication-item a {
+.publication-item > a {
   display: inline-block;
   max-width: 100%;
   font-weight: 600;
