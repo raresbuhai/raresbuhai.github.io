@@ -670,20 +670,8 @@ h2 {
     width: 100%;
   }
 
-  .pub-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .pub-meta .pub-venue {
-    align-self: flex-end;
-    margin-left: auto;
-  }
-
-  .pub-meta .pub-link {
-    align-self: flex-end;
-    margin-left: auto;
+  .pub-meta > span:not(.pub-venue) {
+    flex-basis: 100%;
   }
 }
 
@@ -738,12 +726,6 @@ h2 {
 
   .publication-item {
     padding: 12px;
-  }
-
-  .pub-meta .pub-venue,
-  .pub-meta .pub-link {
-    align-self: flex-start;
-    margin-left: 0;
   }
 
   pre,
