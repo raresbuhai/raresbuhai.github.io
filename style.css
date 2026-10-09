@@ -577,10 +577,6 @@ h2 {
   flex: none;
 }
 
-.nonhigh {
-  opacity: 0.95;
-}
-
 @media (max-width: 640px) {
   h1,
   h2,
