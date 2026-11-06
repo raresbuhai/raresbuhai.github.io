@@ -284,6 +284,7 @@ pre code {
 .hero-media img {
   width: 200px;
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
 }
 
@@ -300,7 +301,7 @@ pre code {
 
 .hero p {
   margin: 0;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -344,7 +345,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.75rem;
-  color: var(--accent-strong);
+  color: var(--muted);
 }
 
 .contact-link {
@@ -503,6 +504,12 @@ h2 {
   color: var(--muted);
 }
 
+/* Bio and publication lists sit flush with their headings at every width. */
+.content-section .timeline-list,
+.content-section .publication-list {
+  padding-left: 0;
+}
+
 .timeline-list {
   list-style: none;
   padding: 0;
@@ -599,6 +606,9 @@ h2 {
   font-weight: 600;
   color: inherit;
   flex: none;
+  /* Keep the venue badge rightmost, after any Lean proof badge,
+     so venue badges line up in one column on wide screens. */
+  order: 1;
 }
 
 @media (max-width: 640px) {
@@ -693,6 +703,11 @@ h2 {
   .pub-meta > span:not(.pub-venue) {
     flex-basis: 100%;
   }
+
+  /* Badges wrap onto their own left-aligned row here: venue first. */
+  .pub-venue {
+    order: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -706,8 +721,9 @@ h2 {
     row-gap: 24px;
   }
 
+  /* Smaller photo on phones so the name and intro show on the first screen. */
   .hero-media img {
-    width: min(200px, 78vw);
+    width: 140px;
   }
 
   #title {
@@ -728,11 +744,6 @@ h2 {
   .contact-line {
     flex-wrap: wrap;
     gap: 4px 10px;
-  }
-
-  .content-section .timeline-list,
-  .content-section .publication-list {
-    padding-left: 0;
   }
 
   .timeline-list {
